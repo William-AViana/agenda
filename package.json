@@ -1,0 +1,33 @@
+{
+  "name": "agenda",
+  "version": "1.0.0",
+  "description": "Aplicação agenda de clientes e gerador de orçamentos",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/** test/** --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/William-AViana/agenda.git"
+  },
+  "author": "William Viana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/William-AViana/agenda/issues"
+  },
+  "homepage": "https://github.com/William-AViana/agenda#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^27.5.1"
+  }
+}
