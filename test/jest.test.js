@@ -1,6 +1,12 @@
 test('devo conhecer as principais acertivas do jest', () => {
-  const number = 12;
+  let number = null;
+  expect(number).toBeNull();
+  number = 10;
   expect(number).not.toBeNull();
+  expect(number).toBe(10);
+  expect(number).toEqual(10);
+  expect(number).toBeGreaterThan(9);
+  expect(number).toBeLessThan(11);
 });
 
 test('Devo saber trabalhar com objetos', () => {
