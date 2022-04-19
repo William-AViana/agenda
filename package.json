@@ -2,10 +2,11 @@
   "name": "agenda",
   "version": "1.0.0",
   "description": "Aplicação agenda de clientes e gerador de orçamentos",
-  "main": "server.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint src/** test/** --fix"
+    "lint": "eslint src/** test/** --fix",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,12 @@
     "mongoose": "^6.3.0"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   }
 }
