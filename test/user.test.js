@@ -2,7 +2,7 @@ const request = require('supertest');
 
 const app = require('../src/app');
 
-test('Deve inserir o usuário no banco de dados', () => {
+test('Deve inserir o usuário com sucesso', () => {
   return request(app).post('/auth/register')
     .send({ name: 'William', email: 'will@email.com' })
     .then((res) => {
