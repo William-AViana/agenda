@@ -4,9 +4,10 @@
   "description": "Aplicação agenda de clientes e gerador de orçamentos",
   "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "jest",
     "lint": "eslint src/** test/** --fix",
-    "dev": "nodemon server.js"
+    "secure-mode": "jest --watch --verbose=true"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
   "homepage": "https://github.com/William-AViana/agenda#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "consign": "^0.1.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
