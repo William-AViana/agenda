@@ -2,7 +2,7 @@ const request = require('supertest');
 
 const app = require('../../src/app');
 
-test('Deve listar todos os usuários', async () => {
+test('Deve listar todos os usuários', () => {
   return request(app).get('/users')
     .then((res) => {
       expect(res.status).toBe(200);
@@ -10,7 +10,7 @@ test('Deve listar todos os usuários', async () => {
     });
 });
 
-test('Deve inserir o usuário com sucesso', async () => {
+test('Deve inserir o usuário com sucesso', () => {
   const email = `${Date.now()}@email.com`;
   return request(app).post('/auth/register')
     .send({
