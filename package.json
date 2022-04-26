@@ -7,7 +7,7 @@
     "start": "node src/server.js",
     "test": "jest",
     "lint": "eslint src/** test/** --fix",
-    "secure-mode": "jest --watch --verbose=true"
+    "secure-mode": "jest --watch --verbose=false"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "knex": "^2.0.0",
-    "mongoose": "^6.3.0",
+    "knex-logger": "^0.1.0",
     "pg": "^8.7.3"
   },
   "devDependencies": {
