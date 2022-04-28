@@ -25,3 +25,12 @@ test('Deve inserir o usuário com sucesso', () => {
       expect(res.body.passworld).not.toBeFalsy();
     });
 });
+
+test('Não deve inserir usuário sem nome', () => {
+  return request(app).post('/auth/register')
+    .send({ email: 'will@email.com', passworld: 1234 })
+    .then((res) => {
+      expect(res.status).toBe(400);
+      expect(res.body.error).toBe('Nome é um atributo obrigatório');
+    });
+});
