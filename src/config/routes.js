@@ -1,5 +1,5 @@
 module.exports = (app) => {
-  app.route('/auth/register')
+  app.route('/users')
     .post(app.routes.users.create);
 
   app.route('/users')
