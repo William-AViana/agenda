@@ -12,7 +12,7 @@ test('Deve listar todos os usuários', () => {
 
 test('Deve inserir o usuário com sucesso', () => {
   const email = `${Date.now()}@email.com`;
-  return request(app).post('/auth/register')
+  return request(app).post('/users')
     .send({
       name: 'William',
       email,
@@ -20,14 +20,12 @@ test('Deve inserir o usuário com sucesso', () => {
     })
     .then((res) => {
       expect(res.status).toBe(201);
-      expect(res.body.name).not.toBeFalsy();
-      expect(res.body.email).not.toBeFalsy();
-      expect(res.body.passworld).not.toBeFalsy();
+      expect(res.body.name).toBe('William');
     });
 });
 
 test('Não deve inserir usuário sem nome', () => {
-  return request(app).post('/auth/register')
+  return request(app).post('/users')
     .send({ email: 'will@email.com', passworld: 1234 })
     .then((res) => {
       expect(res.status).toBe(400);
