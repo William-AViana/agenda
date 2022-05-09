@@ -2,6 +2,8 @@ const request = require('supertest');
 
 const app = require('../../src/app');
 
+const email = `${Date.now()}@email.com`;
+
 test('Deve listar todos os usuários', () => {
   return request(app).get('/users')
     .then((res) => {
@@ -11,7 +13,6 @@ test('Deve listar todos os usuários', () => {
 });
 
 test('Deve inserir o usuário com sucesso', () => {
-  const email = `${Date.now()}@email.com`;
   return request(app).post('/users')
     .send({
       name: 'William',
