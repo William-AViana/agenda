@@ -51,3 +51,12 @@ test('Não deve inserir usuário sem senha', (done) => {
     })
     .catch((err) => done.fail(err));
 });
+
+test('Não deve inserir uauário com email existente', () => {
+  return request(app).post('/users')
+    .send({ name: 'William', email, password: 1234 })
+    .then((res) => {
+      expect(res.status).toBe(400);
+      expect(res.body.error).toBe('Já existe usuário com esse email');
+    });
+});
