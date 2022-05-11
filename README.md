@@ -1,4 +1,4 @@
-# API com Jest e TDD
+# API REST com NodeJS aplicando TDD
 
 ## Dependências do projeto
   - express
