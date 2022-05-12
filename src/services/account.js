@@ -3,5 +3,9 @@ module.exports = (app) => {
     return app.db('accounts').insert(account, '*');
   };
 
-  return { save };
+  const getAll = () => {
+    return app.db('accounts');
+  };
+
+  return { save, getAll };
 };
