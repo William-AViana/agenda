@@ -79,3 +79,5 @@ test('Deve remover uma conta', () => {
       expect(res.status).toBe(204);
     });
 });
+
+test.skip('Não deve remover uma conta de outro usuário', () => { });
