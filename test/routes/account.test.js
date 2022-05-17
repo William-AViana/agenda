@@ -31,6 +31,8 @@ test('Não deve inserir uma conta sem nome', () => {
     });
 });
 
+test.skip('Não deve inserir uma conta de nome duplicado, para o mesmo usuário', () => { });
+
 test('Deve listar todas as contas', () => {
   return app.db('accounts')
     .insert({ name: 'Acc list', user_id: user.id })
