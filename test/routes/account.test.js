@@ -56,6 +56,8 @@ test('Deve retornar uma conta por id', () => {
     });
 });
 
+test.skip('Não deve retornar uma conta de outro usuário', () => { });
+
 test('Deve alterar uma conta', () => {
   return app.db('accounts')
     .insert({ name: 'Acc to update', user_id: user.id }, ['id'])
