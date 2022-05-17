@@ -43,6 +43,8 @@ test('Deve listar todas as contas', () => {
     });
 });
 
+test.skip('Deve listar apenas as contas do usuário', () => { });
+
 test('Deve retornar uma conta por id', () => {
   return app.db('accounts')
     .insert({ name: 'Acc By Id', user_id: user.id }, ['id'])
