@@ -20,12 +20,13 @@
   },
   "homepage": "https://github.com/William-AViana/agenda#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.20.0",
     "consign": "^0.1.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
+    "jwt-simple": "^0.5.6",
     "knex": "^2.0.0",
     "knex-logger": "^0.1.0",
     "pg": "^8.7.3"
