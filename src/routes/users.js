@@ -8,9 +8,10 @@ module.exports = (app) => {
     }
   };
 
-  const findAll = async (req, res) => {
+  const findAll = async (req, res, next) => {
     app.services.user.findAll()
-      .then((result) => res.status(200).json(result));
+      .then((result) => res.status(200).json(result))
+      .catch((err) => next(err));
   };
 
   return { create, findAll };
