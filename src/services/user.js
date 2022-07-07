@@ -1,7 +1,5 @@
-<<<<<<< HEAD
-=======
 const bcrypt = require('bcrypt-nodejs');
->>>>>>> bug-fix
+
 const ValidationError = require('../errors/ValidationError');
 
 module.exports = (app) => {
@@ -23,13 +21,8 @@ module.exports = (app) => {
     if (!user.email) throw new ValidationError('Email é um atributo obrigatório');
     if (!user.password) throw new ValidationError('Senha é um atributo obrigatório');
 
-<<<<<<< HEAD
-    const userDb = await findAll({ email: user.email });
-    if (userDb && userDb.length > 0) throw new ValidationError('Já existe usuário com esse email');
-=======
     const userDb = await findOne({ email: user.email });
     if (userDb) throw new ValidationError('Já existe usuário com esse email');
->>>>>>> bug-fix
 
     const newUser = { ...user };
     newUser.password = getPasswordHash(user.password);
