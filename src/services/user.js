@@ -20,11 +20,13 @@ module.exports = (app) => {
     if (!user.email) throw new ValidationError('Email é um atributo obrigatório');
     if (!user.password) throw new ValidationError('Senha é um atributo obrigatório');
 
-    const userDb = await findAll({ email: user.email });
-    if (userDb && userDb.length > 0) throw new ValidationError('Já existe usuário com esse email');
+    const userDb = await findOne({ email: user.email });
+    if (userDb) throw new ValidationError('Já existe usuário com esse email');
 
-    return app.db('users').insert(user, ['id', 'name', 'email']);
+    const newUser = { ...user };
+    newUser.password = getPasswordHash(user.password);
+    return app.db('users').insert(newUser, ['id', 'name', 'email']);
   };
 
-  return { findAll, save };
+  return { findAll, save, findOne };
 };
