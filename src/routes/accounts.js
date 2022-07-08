@@ -3,13 +3,10 @@ module.exports = (app) => {
     app.services.account.save(req.body)
       .then((result) => {
         return res.status(201).json(result[0]);
-<<<<<<< HEAD
       }).catch((err) => {
         return res.status(400).json({ error: err.message });
       });
-=======
       }).catch((err) => next(err));
->>>>>>> bug-fix
   };
 
   const getAll = (req, res, next) => {
