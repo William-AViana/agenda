@@ -1,5 +1,6 @@
 const jwt = require('jwt-simple');
 const bcrypt = require('bcrypt-nodejs');
+const ValidationError = require('../errors/ValidationError');
 
 require('dotenv').config();
 
