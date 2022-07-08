@@ -5,8 +5,8 @@ module.exports = (app) => {
         return res.status(201).json(result[0]);
       }).catch((err) => {
         return res.status(400).json({ error: err.message });
-      });
-      }).catch((err) => next(err));
+      })
+      .catch((err) => next(err));
   };
 
   const getAll = (req, res, next) => {
