@@ -1,18 +1,10 @@
 module.exports = (app) => {
-<<<<<<< HEAD
-  const create = async (req, res) => {
-=======
   const create = async (req, res, next) => {
->>>>>>> bug-fix
     try {
       const result = await app.services.user.save(req.body);
       return res.status(201).json(result[0]);
     } catch (err) {
-<<<<<<< HEAD
-      return res.status(400).json({ error: err.message });
-=======
       return next(err);
->>>>>>> bug-fix
     }
   };
 
