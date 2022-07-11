@@ -1,4 +1,9 @@
 const request = require('supertest');
+const jwt = require('jwt-simple');
+require('dotenv').config();
+
+const secret = process.env.SECRET_KEY;
+
 const app = require('../../src/app');
 
 const MAIN_ROUTE = '/accounts';
