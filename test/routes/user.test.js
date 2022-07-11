@@ -8,6 +8,18 @@ const app = require('../../src/app');
 
 const email = `${Date.now()}@email.com`;
 
+let user;
+
+beforeAll(async () => {
+  const res = await app.services.user.save({
+    name: 'User Account',
+    email: `${Date.now()}@email.com`,
+    password: '1234',
+  });
+  user = { ...res[0] };
+  user.token = jwt.encode(user, secret);
+});
+
 test('Deve listar todos os usuários', () => {
   return request(app).get('/users')
     .then((res) => {
