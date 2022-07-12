@@ -7,6 +7,7 @@ const secret = process.env.SECRET_KEY;
 const app = require('../../src/app');
 
 const MAIN_ROUTE = '/accounts';
+
 let user;
 
 beforeAll(async () => {
@@ -16,6 +17,7 @@ beforeAll(async () => {
     password: '1234',
   });
   user = { ...res[0] };
+  user.token = jwt.encode(user, secret);
 });
 
 test('Deve inserir uma conta com sucesso', () => {
